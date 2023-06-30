@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .box1 {
+            width: 500px;
+            height: auto;
+            border: 1px solid black;
+            float: left;
+            text-align: center;
+
+        }
+
+        input {
+            width: 80%;
+            height: 50px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 150px;
+        }
+
+        .box2 {
+            margin: auto;
+            width: 500px;
+            height: 750px;
+            border: 1px solid black;
+            float: left;
+            text-align: center;
+            display: grid;
+            place-content: center;
+            background: url(./luxury_beautifull_flower_frame.jpg) no-repeat center;
+            background-size: cover;
+            position: relative;
+        }
+
+        h1 {
+            position: absolute;
+            font-size: 25px;
+            top: 20%;
+            left: 30%;
+            padding: 25px 0;
+
+        }
+
+        h2 {
+            position: absolute;
+            font-size: 25px;
+            bottom: 20%;
+            left: 30%;
+            padding: 25px 0;
+
+        }
+
+        h3 {
+            position: absolute;
+            font-size: 25px;
+            top: 40%;
+            left: 30%;
+            padding: 25px 0;
+
+        }
+
+        /* .box1 *{
+            font-family: inherit !important;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <form action="">
+            <h4>to:</h4>
+            <input type="text" id="cont" onkeyup="content()">
+            <h4>from:</h4>
+            <input type="text" id="cont" onkeyup="content()">
+            <h4>message:</h4>
+            <textarea name="" id="cont" cols="30" rows="10" onkeyup="content()"></textarea>
+
+            <h4>font family </h4>
+            <select name="" id="fonts" onchange="fontchange(this)">
+                <option value="Arial">Arial</option>
+                <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                <option value="Segoe UI">Segoe UI</option>
+                <option value="monospace">monospace</option>
+
+            </select>
+            <h4>Text color</h4>
+            <input type="color" id="col" onchange="colorchange(this)">
+            <h4>background images</h4>
+            <img src="./87370.jpg" alt="" width="80px" height="80px" onclick="changeimg(this)" class="img1">
+            <img src="./62976.jpg" alt="" width="80px" height="80px"    onclick="changeimg(this)" >
+            <img src="./62987.jpg" alt="" width="80px" height="80px" onclick="changeimg(this)">
+
+
+        </form>
+    </div>
+    <div class="box2" id="parent">
+        <h1 class="setheadings">hello</h1>
+        <h3 class="setheadings">message</h3>
+        <h2 class="setheadings">form</h2>
+
+    </div>
+
+</body>
+<script>
+  var con=document.querySelectorAll("#cont");
+  var show=document.getElementsByClassName("setheadings")
+  var par=document.getElementById("parent");
+  console.log(show)
+
+    function content(){
+        console.log(show[0].innerText=con[0].value)
+        console.log(show[2].innerText=con[1].value)
+        console.log(show[1].innerText=con[2].value)
+
+    }
+    function fontchange(e){
+        console.log(par.style.fontFamily=e.value)
+    }
+    function colorchange(e){
+        console.log(par.style.color=e.value)
+    }
+    function changeimg(a){
+        // document.getElementsByClassName()
+        console.log(par.style.backgroundImage=`url(${a.src})`)
+    }
+</script>
+
+</html>
